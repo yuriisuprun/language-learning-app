@@ -1,16 +1,14 @@
 package com.example.user_management_service.repository;
 
-import com.example.user_management_service.model.User;
+import com.example.user_management_service.model.CustomUser;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
 
 /**
  * @author Yurii_Suprun
  */
-@Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<CustomUser, Long> {
 
-    User findByUsername(String username);
-
-    User findByEmail(String email);
+    Optional<CustomUser> findByUsername(String username);
 }
